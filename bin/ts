@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ -z "$TS_HOME" ]]; then
+  export TS_HOME="$HOME/.ts"
+fi
+
+mkdir -p "$TS_HOME"
+
+current_time=`date "+%H:%M"`
+
+echo "$current_time"
+echo "$current_time" >> "$TS_HOME/log"
