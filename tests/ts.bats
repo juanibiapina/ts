@@ -14,6 +14,6 @@ load test_helper
 
 @test "without arguments, adds current time to file for today" {
   run ./bin/ts
-  result=`cat $TS_HOME/log`
+  result=`cat $TS_HOME/log-+%m-%d-%Y`
   assert_equal "$result" "+%H:%M"
 }
