@@ -27,8 +27,8 @@ if [ "$1" = "now" ]; then
     if [ -z "$end_minute" ]; then
       end_minute=`date +%M`
     fi
-    minutes=$(((60-start_minute+end_minute)+((end_hour-start_hour-1)*60)))
-    total=$((minutes+total))
+    minutes=$(((60-10#$start_minute+10#$end_minute)+((10#$end_hour-10#$start_hour-1)*60)))
+    total=$(($minutes+total))
   done <<< "$joined"
 
   total_hours=$(($total/60))
