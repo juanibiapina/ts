@@ -35,3 +35,7 @@ if [ "$1" = "now" ]; then
   total_minutes=$(($total%60))
   printf "%02d:%02d\n" "$total_hours" "$total_minutes"
 fi
+
+if [ "$1" = "show" ]; then
+  cat "$log_file"
+fi
