@@ -39,3 +39,7 @@ fi
 if [ "$1" = "show" ]; then
   cat "$log_file"
 fi
+
+if [ "$1" = "edit" ]; then
+  vi "$log_file"
+fi
