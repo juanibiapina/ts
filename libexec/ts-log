@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mkdir -p "$TS_DATA"
+log_file="$TS_DATA/log-$CURRENT_DATE"
+
+echo "$CURRENT_HOUR $CURRENT_MINUTE"
+echo "$CURRENT_HOUR $CURRENT_MINUTE" >> "$log_file"

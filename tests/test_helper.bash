@@ -1,20 +1,24 @@
-export PATH="tests/fixtures/path:$PATH"
+TS_TEST_DIR="${BATS_TMPDIR}/ts"
 
-export TS_HOME="tests/fixtures/ts_home"
+export PATH="${BATS_TEST_DIRNAME}/libexec:$PATH"
+export PATH="${BATS_TEST_DIRNAME}/../libexec:$PATH"
 
-assert_equal() {
-  if [[ "$1" == "$2" ]]; then
-    true
-  else
-    echo "  --- "
-    echo "  severity: fail "
-    echo "  data: "
-    echo "    expected: $2"
-    echo "    got: $1"
-    false
-  fi
-}
+export TS_ROOT="${TS_TEST_DIR}/root"
+export TS_DATA="${TS_TEST_DIR}/data"
+
+mkdir -p "$TS_ROOT"
+mkdir -p "$TS_DATA"
 
 teardown() {
-  rm -rf "$TS_HOME"
+  rm -rf "$TS_TEST_DIR"
 }
+
+mock_date() {
+  export PATH="${BATS_TEST_DIRNAME}/path/date:$PATH"
+}
+
+mock_vi() {
+  export PATH="${BATS_TEST_DIRNAME}/path/vi:$PATH"
+}
+
+load assertions

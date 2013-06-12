@@ -2,18 +2,26 @@
 
 load test_helper
 
-@test "without argument, status is zero" {
-  run ./bin/ts
-  assert_equal "$status" "0"
+@test "default TS_ROOT" {
+  TS_ROOT="" HOME=/home/user run ts echo TS_ROOT
+  assert_success
+  assert_output "/home/user/.ts"
 }
 
-@test "without arguments, prints current time" {
-  run ./bin/ts
-  assert_equal "${lines[0]}" "+%H %M"
+@test "inherited TS_ROOT" {
+  TS_ROOT="/var/path" HOME=/home/user run ts echo TS_ROOT
+  assert_success
+  assert_output "/var/path"
 }
 
-@test "without arguments, adds current time to file for today" {
-  run ./bin/ts
-  result=`cat $TS_HOME/log-+%m-%d-%Y`
-  assert_equal "$result" "+%H %M"
+@test "default TS_DATA" {
+  TS_DATA="" HOME=/home/user run ts echo TS_DATA
+  assert_success
+  assert_output "/home/user/.ts-data"
+}
+
+@test "inherited TS_DATA" {
+  TS_DATA="/var/path" HOME=/home/user run ts echo TS_DATA
+  assert_success
+  assert_output "/var/path"
 }

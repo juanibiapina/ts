@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+log_file="$TS_DATA/log-$CURRENT_DATE"
+
+joined=`sed '$!N;s/\n/ /' "$log_file"`
+total=0
+
+while read start_hour start_minute end_hour end_minute
+do
+  if [ -z "$end_hour" ]; then
+    end_hour="$CURRENT_HOUR"
+  fi
+  if [ -z "$end_minute" ]; then
+    end_minute="$CURRENT_MINUTE"
+  fi
+  minutes=$(((60-10#$start_minute+10#$end_minute)+((10#$end_hour-10#$start_hour-1)*60)))
+  total=$(($minutes+total))
+done <<< "$joined"
+
+total_hours=$(($total/60))
+total_minutes=$(($total%60))
+printf "%02d:%02d\n" "$total_hours" "$total_minutes"

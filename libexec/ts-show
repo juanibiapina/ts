@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+log_file="$TS_DATA/log-$CURRENT_DATE"
+
+cat "$log_file"
