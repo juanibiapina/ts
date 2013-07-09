@@ -19,4 +19,12 @@ mock_vi() {
   export PATH="${BATS_TEST_DIRNAME}/path/vi:$PATH"
 }
 
+mock_mail() {
+  export PATH="${BATS_TEST_DIRNAME}/path/mail:$PATH"
+}
+
+create_mail_config() {
+  echo "$1" > "$TS_DATA/mail"
+}
+
 load assertions
