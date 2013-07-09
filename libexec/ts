@@ -20,11 +20,6 @@ abs_dirname() {
   cd "$cwd"
 }
 
-if [ -z "$TS_ROOT" ]; then
-  TS_ROOT="$HOME/.ts"
-fi
-export TS_ROOT
-
 if [ -z "$TS_DATA" ]; then
   TS_DATA="$HOME/.ts-data"
 fi
