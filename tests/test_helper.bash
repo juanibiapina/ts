@@ -3,10 +3,8 @@ TS_TEST_DIR="${BATS_TMPDIR}/ts"
 export PATH="${BATS_TEST_DIRNAME}/libexec:$PATH"
 export PATH="${BATS_TEST_DIRNAME}/../libexec:$PATH"
 
-export TS_ROOT="${TS_TEST_DIR}/root"
 export TS_DATA="${TS_TEST_DIR}/data"
 
-mkdir -p "$TS_ROOT"
 mkdir -p "$TS_DATA"
 
 teardown() {
