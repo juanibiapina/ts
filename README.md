@@ -4,21 +4,11 @@ Small tool to manage time tracking on the command line.
 
 ## Installation
 
-1. Checkout ts on `~/.ts`
+Using [basher](https://github.com/juanibiapina/basher)
 
-    ~~~ sh
-    $ git clone git://github.com/juanibiapina/timesheets.git ~/.ts
-    ~~~
-
-2. Add `~/.ts/bin` to `$PATH` for easy access to the ts command-line utility.
-
-    ~~~ sh
-    $ echo 'export PATH="$HOME/.ts/bin:$PATH"' >> ~/.bash_profile
-    ~~~
-
-    **Ubuntu note**: Modify your `~/.profile` instead of `~/.bash_profile`.
-
-    **Zsh note**: Modify your `~/.zshrc` file instead of `~/.bash_profile`.
+~~~ sh
+$ basher install juanibiapina timesheets
+~~~
 
 ## Usage
 
@@ -28,6 +18,8 @@ Small tool to manage time tracking on the command line.
 - `ts now` shows how much work time has been logged
 - `ts show` shows current logged times
 - `ts edit` opens log file with vi
+- `ts remaining` shows how much time until 8 hours are complete
+- `ts final` shows when you'll complete 8 hours
 
 ## Limitations
 
