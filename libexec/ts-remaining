@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+current_total="$(ts-now)"
+
+while read hours minutes
+do
+  minutes=$(((10#$hours*60)+10#$minutes))
+  remaining_minutes=$(((8*60)-10#$minutes))
+done <<< "$current_total"
+
+total_hours=$(($remaining_minutes/60))
+total_minutes=$(($remaining_minutes%60))
+printf "%02d %02d\n" "$total_hours" "$total_minutes"
