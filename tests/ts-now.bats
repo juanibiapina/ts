@@ -12,7 +12,7 @@ setup() {
 
   run ts-now
   assert_success
-  assert_output "00:01"
+  assert_output "00 01"
 }
 
 @test "worked hours" {
@@ -21,7 +21,7 @@ setup() {
 
   run ts-now
   assert_success
-  assert_output "01:00"
+  assert_output "01 00"
 }
 
 @test "worked hours and minutes" {
@@ -30,7 +30,7 @@ setup() {
 
   run ts-now
   assert_success
-  assert_output "03:40"
+  assert_output "03 40"
 }
 
 @test "running hours and minutes" {
@@ -40,7 +40,7 @@ setup() {
 
   run ts-now
   assert_success
-  assert_output "01:01"
+  assert_output "01 01"
 }
 
 @test "running hours and minutes after pause" {
@@ -52,5 +52,5 @@ setup() {
 
   run ts-now
   assert_success
-  assert_output "02:20"
+  assert_output "02 20"
 }

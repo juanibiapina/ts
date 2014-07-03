@@ -19,4 +19,4 @@ done <<< "$joined"
 
 total_hours=$(($total/60))
 total_minutes=$(($total%60))
-printf "%02d:%02d\n" "$total_hours" "$total_minutes"
+printf "%02d %02d\n" "$total_hours" "$total_minutes"
