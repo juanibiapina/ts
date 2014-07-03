@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+remaining="$(ts-remaining)"
+
+read h m <<< "$remaining"
+
+remaining_minutes=$(((60*10#$h)+10#$m))
+current_minutes=$(((60*10#$CURRENT_HOUR+(10#$CURRENT_MINUTE))))
+final_minutes=$(($current_minutes+$remaining_minutes))
+
+final_hour=$(($final_minutes/60))
+final_minute=$(($final_minutes%60))
+
+printf "%02d %02d\n" "$final_hour" "$final_minute"
