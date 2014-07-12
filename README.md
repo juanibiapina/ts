@@ -7,7 +7,7 @@ Small tool to manage time tracking on the command line.
 Using [basher](https://github.com/juanibiapina/basher)
 
 ~~~ sh
-$ basher install juanibiapina timesheets
+$ basher install juanibiapina/ts
 ~~~
 
 ## Usage
