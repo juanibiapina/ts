@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+basher _commands ts
